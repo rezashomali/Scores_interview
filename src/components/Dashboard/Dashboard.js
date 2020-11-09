@@ -113,15 +113,78 @@ export default function Dashboard() {
   const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
 
   const [scoresListing, setScoresListing] = useState([]);
+  const [countryAverageData, setCountryAverageData] = useState([]);
+  const [genderAverageData, setGenderAverageData] = useState([]);
+  const [chartDataType, setChartDataType] = useState("gender");
 
   useEffect(() => {
     fetch("http://localhost:3000/api/people.json")
       .then((response) => response.json())
       .then((data) => {
         setScoresListing(data);
+        setCountryAverageData(generateCountryData(data));
+        setGenderAverageData(generateGenderData(data));
       })
       .catch((error) => console.log(error));
   }, []);
+
+  // [
+  //   { country, score },
+  //   { country, score },
+  //   { country, score }
+  // ]
+
+  // [
+  //   { male, 80 },
+  //   { female, 60 },
+  //   { undefined, 10 }
+  // ]
+
+  const generateCountryData = (data) => {
+    const countryObj = {};
+    const countryAverageArray = [];
+
+    data.map((item) => {
+      if (countryObj[item.country]) {
+        countryObj[item.country].score += item.score;
+        countryObj[item.country].count += 1;
+      } else {
+        countryObj[item.country] = { score: 0, count: 1 };
+      }
+    });
+
+    Object.keys(countryObj).map((item) => {
+      countryAverageArray.push({
+        country: item,
+        score: countryObj[item].score / countryObj[item].count,
+      });
+    });
+
+    return countryAverageArray;
+  };
+
+  const generateGenderData = (data) => {
+    const genderObj = {};
+    const genderAverageArray = [];
+
+    data.map((item) => {
+      if (genderObj[item.gender]) {
+        genderObj[item.gender].score += item.score;
+        genderObj[item.gender].count += 1;
+      } else {
+        genderObj[item.gender] = { score: 0, count: 1 };
+      }
+    });
+
+    Object.keys(genderObj).map((item) => {
+      genderAverageArray.push({
+        gender: item,
+        score: genderObj[item].score / genderObj[item].count,
+      });
+    });
+
+    return genderAverageArray;
+  };
 
   return (
     <div className={classes.root}>
@@ -178,7 +241,14 @@ export default function Dashboard() {
             {/* Chart */}
             <Grid item xs={12}>
               <Paper className={fixedHeightPaper}>
-                <Chart />
+                <Chart
+                  chartDataType={chartDataType}
+                  chartData={
+                    chartDataType === "country"
+                      ? countryAverageData
+                      : genderAverageData
+                  }
+                />
               </Paper>
             </Grid>
             {/* Recent scores */}
