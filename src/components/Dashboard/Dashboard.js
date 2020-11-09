@@ -1,17 +1,19 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import clsx from "clsx";
 import { makeStyles } from "@material-ui/core/styles";
-import CssBaseline from "@material-ui/core/CssBaseline";
-import Drawer from "@material-ui/core/Drawer";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import List from "@material-ui/core/List";
-import Typography from "@material-ui/core/Typography";
-import Divider from "@material-ui/core/Divider";
-import IconButton from "@material-ui/core/IconButton";
-import Container from "@material-ui/core/Container";
-import Grid from "@material-ui/core/Grid";
-import Paper from "@material-ui/core/Paper";
+import {
+  CssBaseline,
+  Drawer,
+  AppBar,
+  Toolbar,
+  List,
+  Typography,
+  Divider,
+  IconButton,
+  Container,
+  Grid,
+  Paper,
+} from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import { mainListItems, secondaryListItems } from "../ListItems/ListItems";
@@ -101,7 +103,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Dashboard() {
   const classes = useStyles();
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = useState(true);
   const handleDrawerOpen = () => {
     setOpen(true);
   };
@@ -109,6 +111,17 @@ export default function Dashboard() {
     setOpen(false);
   };
   const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
+
+  const [scoresListing, setScoresListing] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:3000/api/people.json")
+      .then((response) => response.json())
+      .then((data) => {
+        setScoresListing(data);
+      })
+      .catch((error) => console.log(error));
+  }, []);
 
   return (
     <div className={classes.root}>
@@ -171,7 +184,7 @@ export default function Dashboard() {
             {/* Recent scores */}
             <Grid item xs={12}>
               <Paper className={classes.paper}>
-                <ScoreTable />
+                <ScoreTable userData={scoresListing} />
               </Paper>
             </Grid>
           </Grid>
