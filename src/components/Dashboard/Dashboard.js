@@ -16,7 +16,7 @@ import {
 } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
-import { mainListItems, secondaryListItems } from "../ListItems/ListItems";
+import { mainListItems, SecondaryListItems } from "../ListItems/ListItems";
 import Chart from "../Chart/Chart";
 import ScoreTable from "../ScoreTable/ScoreTable";
 
@@ -115,7 +115,7 @@ export default function Dashboard() {
   const [scoresListing, setScoresListing] = useState([]);
   const [countryAverageData, setCountryAverageData] = useState([]);
   const [genderAverageData, setGenderAverageData] = useState([]);
-  const [chartDataType, setChartDataType] = useState("gender");
+  const [chartDataType, setChartDataType] = useState("country");
 
   useEffect(() => {
     fetch("http://localhost:3000/api/people.json")
@@ -232,7 +232,9 @@ export default function Dashboard() {
         <Divider />
         <List>{mainListItems}</List>
         <Divider />
-        <List>{secondaryListItems}</List>
+        <List>
+          <SecondaryListItems selectChartDataType={setChartDataType} />
+        </List>
       </Drawer>
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
