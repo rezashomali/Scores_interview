@@ -35,18 +35,16 @@ export default function ScoreTable({ userData }) {
           </TableRow>
         </TableHead>
         <TableBody>
-          {userData
-            .filter((_, index, array) => index < (readmore ? array.length : 10))
-            .map((row) => (
-              <TableRow key={row.id}>
-                <TableCell>{row.last_name}</TableCell>
-                <TableCell>{row.first_name}</TableCell>
-                <TableCell>{row.gender}</TableCell>
-                <TableCell>{row.city}</TableCell>
-                <TableCell>{row.country}</TableCell>
-                <TableCell align="right">{row.score}</TableCell>
-              </TableRow>
-            ))}
+          {userData.slice(0, readmore ? -1 : 10).map((row) => (
+            <TableRow key={row.id}>
+              <TableCell>{row.last_name}</TableCell>
+              <TableCell>{row.first_name}</TableCell>
+              <TableCell>{row.gender}</TableCell>
+              <TableCell>{row.city}</TableCell>
+              <TableCell>{row.country}</TableCell>
+              <TableCell align="right">{row.score}</TableCell>
+            </TableRow>
+          ))}
         </TableBody>
       </Table>
       <div className={classes.seeMore}>
