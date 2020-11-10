@@ -1,8 +1,11 @@
 import React from "react";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemIcon from "@material-ui/core/ListItemIcon";
-import ListItemText from "@material-ui/core/ListItemText";
-import ListSubheader from "@material-ui/core/ListSubheader";
+import PropTypes from "prop-types";
+import {
+  ListItem,
+  ListItemIcon,
+  ListItemText,
+  ListSubheader,
+} from "@material-ui/core";
 import DashboardIcon from "@material-ui/icons/Dashboard";
 import AssignmentIcon from "@material-ui/icons/Assignment";
 
@@ -42,3 +45,8 @@ export const SecondaryListItems = ({ selectChartDataType, chartDataType }) => (
     </ListItem>
   </div>
 );
+
+SecondaryListItems.propTypes = {
+  selectChartDataType: PropTypes.func.isRequired,
+  chartDataType: PropTypes.string.isRequired,
+};
