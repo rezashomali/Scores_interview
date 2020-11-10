@@ -101,7 +101,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Dashboard() {
+const Dashboard = () => {
   const classes = useStyles();
   const [open, setOpen] = useState(true);
   const handleDrawerOpen = () => {
@@ -127,18 +127,6 @@ export default function Dashboard() {
       })
       .catch((error) => console.log(error));
   }, []);
-
-  // [
-  //   { country, score },
-  //   { country, score },
-  //   { country, score }
-  // ]
-
-  // [
-  //   { male, 80 },
-  //   { female, 60 },
-  //   { undefined, 10 }
-  // ]
 
   const generateCountryData = (data) => {
     const countryObj = {};
@@ -267,4 +255,6 @@ export default function Dashboard() {
       </main>
     </div>
   );
-}
+};
+
+export default Dashboard;
