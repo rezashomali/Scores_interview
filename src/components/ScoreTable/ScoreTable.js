@@ -35,10 +35,14 @@ const ScoreTable = ({ userData }) => {
   useMemo(() => {
     if (sortConfig.key !== null) {
       sortedData.sort((a, b) => {
-        if (a[sortConfig.key] < b[sortConfig.key]) {
+        if (
+          a[sortConfig.key]?.toLowerCase() < b[sortConfig.key]?.toLowerCase()
+        ) {
           return sortConfig.direction === "ascending" ? -1 : 1;
         }
-        if (a[sortConfig.key] > b[sortConfig.key]) {
+        if (
+          a[sortConfig.key]?.toLowerCase() > b[sortConfig.key]?.toLowerCase()
+        ) {
           return sortConfig.direction === "ascending" ? 1 : -1;
         }
         return 0;
@@ -117,24 +121,7 @@ const ScoreTable = ({ userData }) => {
               </Button>
             </TableCell>
             <TableCell size="small" padding="none">
-              <Button
-                size="small"
-                type="button"
-                endIcon={
-                  sortConfig.key === "gender" ? (
-                    sortConfig.direction === "ascending" ? (
-                      <ArrowDownwardIcon />
-                    ) : (
-                      <ArrowUpwardIcon />
-                    )
-                  ) : (
-                    ""
-                  )
-                }
-                onClick={() => requestSort("gender")}
-              >
-                Gender
-              </Button>
+              Gender
             </TableCell>
             <TableCell size="small" padding="none">
               <Button
@@ -177,24 +164,7 @@ const ScoreTable = ({ userData }) => {
               </Button>
             </TableCell>
             <TableCell align="right" size="small" padding="none">
-              <Button
-                size="small"
-                type="button"
-                endIcon={
-                  sortConfig.key === "score" ? (
-                    sortConfig.direction === "ascending" ? (
-                      <ArrowDownwardIcon />
-                    ) : (
-                      <ArrowUpwardIcon />
-                    )
-                  ) : (
-                    ""
-                  )
-                }
-                onClick={() => requestSort("score")}
-              >
-                Score
-              </Button>
+              Score
             </TableCell>
           </TableRow>
         </TableHead>
