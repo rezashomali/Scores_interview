@@ -233,7 +233,10 @@ export default function Dashboard() {
         <List>{mainListItems}</List>
         <Divider />
         <List>
-          <SecondaryListItems selectChartDataType={setChartDataType} />
+          <SecondaryListItems
+            chartDataType={chartDataType}
+            selectChartDataType={setChartDataType}
+          />
         </List>
       </Drawer>
       <main className={classes.content}>
@@ -256,7 +259,7 @@ export default function Dashboard() {
             {/* Recent scores */}
             <Grid item xs={12}>
               <Paper className={classes.paper}>
-                <ScoreTable userData={scoresListing} />
+                {scoresListing && <ScoreTable userData={scoresListing} />}
               </Paper>
             </Grid>
           </Grid>

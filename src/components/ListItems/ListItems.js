@@ -17,16 +17,24 @@ export const mainListItems = (
   </div>
 );
 
-export const SecondaryListItems = ({ selectChartDataType }) => (
+export const SecondaryListItems = ({ selectChartDataType, chartDataType }) => (
   <div>
     <ListSubheader inset>Saved reports</ListSubheader>
-    <ListItem button onClick={() => selectChartDataType("gender")}>
+    <ListItem
+      selected={chartDataType === "gender"}
+      button
+      onClick={() => selectChartDataType("gender")}
+    >
       <ListItemIcon>
         <AssignmentIcon />
       </ListItemIcon>
       <ListItemText primary="Scores by gender" />
     </ListItem>
-    <ListItem button onClick={() => selectChartDataType("country")}>
+    <ListItem
+      selected={chartDataType === "country"}
+      button
+      onClick={() => selectChartDataType("country")}
+    >
       <ListItemIcon>
         <AssignmentIcon />
       </ListItemIcon>
