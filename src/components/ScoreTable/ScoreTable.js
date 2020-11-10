@@ -1,6 +1,6 @@
 /* eslint-disable no-script-url */
 
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import Link from "@material-ui/core/Link";
 import { makeStyles } from "@material-ui/core/styles";
 import {
@@ -10,6 +10,8 @@ import {
   TableCell,
   TableHead,
   TableRow,
+  Grid,
+  TextField,
 } from "@material-ui/core";
 import Title from "../Title/Title";
 import ArrowDownwardIcon from "@material-ui/icons/ArrowDownward";
@@ -24,6 +26,7 @@ const useStyles = makeStyles((theme) => ({
 export default function ScoreTable({ userData }) {
   const classes = useStyles();
   const [readmore, setReadmore] = useState(false);
+  const [searchValue, setSearchValue] = useState("");
   const [sortConfig, setSortConfig] = useState({
     key: null,
     direction: null,
@@ -56,7 +59,21 @@ export default function ScoreTable({ userData }) {
 
   return (
     <React.Fragment>
-      <Title>Scores listing</Title>
+      <Grid container spacing={3}>
+        <Grid item xs={6}>
+          <Title>Scores listing</Title>
+        </Grid>
+        <Grid item xs={6} align="right">
+          <TextField
+            label="search..."
+            variant="outlined"
+            size="small"
+            value={searchValue}
+            onChange={(e) => setSearchValue(e.target.value.toLowerCase())}
+          />
+        </Grid>
+      </Grid>
+
       <Table size="small">
         <TableHead>
           <TableRow>
@@ -183,16 +200,27 @@ export default function ScoreTable({ userData }) {
           </TableRow>
         </TableHead>
         <TableBody>
-          {sortedData.slice(0, readmore ? -1 : 10).map((row) => (
-            <TableRow key={row.id}>
-              <TableCell>{row.last_name}</TableCell>
-              <TableCell>{row.first_name}</TableCell>
-              <TableCell>{row.gender}</TableCell>
-              <TableCell>{row.city}</TableCell>
-              <TableCell>{row.country}</TableCell>
-              <TableCell align="right">{row.score}</TableCell>
-            </TableRow>
-          ))}
+          {sortedData
+            .filter(
+              (item) =>
+                searchValue === "" ||
+                item.last_name?.toLowerCase().includes(searchValue) ||
+                item.first_name?.toLowerCase().includes(searchValue) ||
+                item.gender?.toLowerCase().includes(searchValue) ||
+                item.city?.toLowerCase().includes(searchValue) ||
+                item.country?.toLowerCase().includes(searchValue)
+            )
+            .slice(0, readmore ? -1 : 10)
+            .map((row) => (
+              <TableRow key={row.id}>
+                <TableCell>{row.last_name}</TableCell>
+                <TableCell>{row.first_name}</TableCell>
+                <TableCell>{row.gender}</TableCell>
+                <TableCell>{row.city}</TableCell>
+                <TableCell>{row.country}</TableCell>
+                <TableCell align="right">{row.score}</TableCell>
+              </TableRow>
+            ))}
         </TableBody>
       </Table>
       <div className={classes.seeMore}>
@@ -203,3 +231,13 @@ export default function ScoreTable({ userData }) {
     </React.Fragment>
   );
 }
+
+// .filter(
+//   (item) =>
+//     searchValue === "" ||
+//     item.last_name.toLowerCase().includes(searchValue) ||
+//     // item.first_name.toLowerCase().includes(searchValue) ||
+//     // item.gender.toLowerCase().includes(searchValue) ||
+//     // item.city.toLowerCase().includes(searchValue) ||
+//     // item.country.toLowerCase().includes(searchValue)
+// )
