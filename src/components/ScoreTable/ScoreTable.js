@@ -50,7 +50,7 @@ const ScoreTable = ({ userData }) => {
     }
 
     return sortedData;
-  }, [sortConfig]);
+  }, [sortConfig, userData]);
 
   const requestSort = (key) => {
     let direction = "ascending";

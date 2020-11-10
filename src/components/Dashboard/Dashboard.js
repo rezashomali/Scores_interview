@@ -139,6 +139,7 @@ const Dashboard = () => {
       } else {
         countryObj[item.country] = { score: 0, count: 1 };
       }
+      return 0;
     });
 
     Object.keys(countryObj).map((item) => {
@@ -146,6 +147,7 @@ const Dashboard = () => {
         country: item,
         score: countryObj[item].score / countryObj[item].count,
       });
+      return 0;
     });
 
     return countryAverageArray;
@@ -162,6 +164,7 @@ const Dashboard = () => {
       } else {
         genderObj[item.gender] = { score: 0, count: 1 };
       }
+      return 0;
     });
 
     Object.keys(genderObj).map((item) => {
@@ -169,6 +172,7 @@ const Dashboard = () => {
         gender: item,
         score: genderObj[item].score / genderObj[item].count,
       });
+      return 0;
     });
 
     return genderAverageArray;
