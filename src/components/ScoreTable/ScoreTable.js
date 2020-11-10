@@ -175,7 +175,6 @@ const ScoreTable = ({ userData }) => {
                 searchValue === "" ||
                 item.last_name?.toLowerCase().includes(searchValue) ||
                 item.first_name?.toLowerCase().includes(searchValue) ||
-                item.gender?.toLowerCase().includes(searchValue) ||
                 item.city?.toLowerCase().includes(searchValue) ||
                 item.country?.toLowerCase().includes(searchValue)
             )
