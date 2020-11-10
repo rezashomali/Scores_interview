@@ -1,9 +1,8 @@
-/* eslint-disable no-script-url */
-
-import React, { useState, useMemo, useEffect } from "react";
-import Link from "@material-ui/core/Link";
+import React, { useState, useMemo } from "react";
+import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
 import {
+  Link,
   Table,
   Button,
   TableBody,
@@ -13,9 +12,9 @@ import {
   Grid,
   TextField,
 } from "@material-ui/core";
-import Title from "../Title/Title";
 import ArrowDownwardIcon from "@material-ui/icons/ArrowDownward";
 import ArrowUpwardIcon from "@material-ui/icons/ArrowUpward";
+import Title from "../Title/Title";
 
 const useStyles = makeStyles((theme) => ({
   seeMore: {
@@ -23,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function ScoreTable({ userData }) {
+const ScoreTable = ({ userData }) => {
   const classes = useStyles();
   const [readmore, setReadmore] = useState(false);
   const [searchValue, setSearchValue] = useState("");
@@ -230,14 +229,10 @@ export default function ScoreTable({ userData }) {
       </div>
     </React.Fragment>
   );
-}
+};
 
-// .filter(
-//   (item) =>
-//     searchValue === "" ||
-//     item.last_name.toLowerCase().includes(searchValue) ||
-//     // item.first_name.toLowerCase().includes(searchValue) ||
-//     // item.gender.toLowerCase().includes(searchValue) ||
-//     // item.city.toLowerCase().includes(searchValue) ||
-//     // item.country.toLowerCase().includes(searchValue)
-// )
+export default ScoreTable;
+
+ScoreTable.propTypes = {
+  userData: PropTypes.array.isRequired,
+};
