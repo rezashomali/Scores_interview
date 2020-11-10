@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Chart renders properly 1`] = `
+Array [
+  <h2
+    className="MuiTypography-root MuiTypography-h6 MuiTypography-colorPrimary MuiTypography-gutterBottom"
+  >
+    Score statistics
+  </h2>,
+  <div
+    className="recharts-responsive-container"
+    style={
+      Object {
+        "height": "100%",
+        "maxHeight": undefined,
+        "minHeight": undefined,
+        "minWidth": undefined,
+        "width": "100%",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "display": "none",
+          "height": 0,
+          "position": "absolute",
+          "visibility": "hidden",
+          "width": 0,
+        }
+      }
+    />
+  </div>,
+]
+`;

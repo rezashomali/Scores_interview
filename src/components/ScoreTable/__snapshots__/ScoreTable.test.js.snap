@@ -1,0 +1,276 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ScoreTable renders properly 1`] = `
+Array [
+  <div
+    className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-3"
+  >
+    <div
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6"
+    >
+      <h2
+        className="MuiTypography-root MuiTypography-h6 MuiTypography-colorPrimary MuiTypography-gutterBottom"
+      >
+        Scores listing
+      </h2>
+    </div>
+    <div
+      align="right"
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6"
+    >
+      <div
+        className="MuiFormControl-root MuiTextField-root"
+      >
+        <label
+          className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-marginDense MuiInputLabel-outlined"
+          data-shrink={false}
+        >
+          search...
+        </label>
+        <div
+          className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl MuiInputBase-marginDense MuiOutlinedInput-marginDense"
+          onClick={[Function]}
+        >
+          <input
+            aria-invalid={false}
+            autoFocus={false}
+            className="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputMarginDense MuiOutlinedInput-inputMarginDense"
+            disabled={false}
+            onAnimationStart={[Function]}
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            required={false}
+            type="text"
+            value=""
+          />
+          <fieldset
+            aria-hidden={true}
+            className="PrivateNotchedOutline-root-2 MuiOutlinedInput-notchedOutline"
+          >
+            <legend
+              className="PrivateNotchedOutline-legendLabelled-4"
+            >
+              <span>
+                search...
+              </span>
+            </legend>
+          </fieldset>
+        </div>
+      </div>
+    </div>
+  </div>,
+  <table
+    className="MuiTable-root"
+    role={null}
+  >
+    <thead
+      className="MuiTableHead-root"
+      role={null}
+    >
+      <tr
+        className="MuiTableRow-root MuiTableRow-head"
+        role={null}
+      >
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-head MuiTableCell-paddingNone MuiTableCell-sizeSmall"
+          scope="col"
+        >
+          <button
+            className="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textSizeSmall MuiButton-sizeSmall"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onDragLeave={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            <span
+              className="MuiButton-label"
+            >
+              Last name
+              
+            </span>
+          </button>
+        </th>
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-head MuiTableCell-paddingNone MuiTableCell-sizeSmall"
+          scope="col"
+        >
+          <button
+            className="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textSizeSmall MuiButton-sizeSmall"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onDragLeave={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            <span
+              className="MuiButton-label"
+            >
+              First name
+              
+            </span>
+          </button>
+        </th>
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-head MuiTableCell-paddingNone MuiTableCell-sizeSmall"
+          scope="col"
+        >
+          Gender
+        </th>
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-head MuiTableCell-paddingNone MuiTableCell-sizeSmall"
+          scope="col"
+        >
+          <button
+            className="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textSizeSmall MuiButton-sizeSmall"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onDragLeave={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            <span
+              className="MuiButton-label"
+            >
+              City
+              
+            </span>
+          </button>
+        </th>
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-head MuiTableCell-paddingNone MuiTableCell-sizeSmall"
+          scope="col"
+        >
+          <button
+            className="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textSizeSmall MuiButton-sizeSmall"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onDragLeave={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            <span
+              className="MuiButton-label"
+            >
+              Country
+              
+            </span>
+          </button>
+        </th>
+        <th
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-head MuiTableCell-alignRight MuiTableCell-paddingNone MuiTableCell-sizeSmall"
+          scope="col"
+        >
+          Score
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      className="MuiTableBody-root"
+      role={null}
+    >
+      <tr
+        className="MuiTableRow-root"
+        role={null}
+      >
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+        >
+          Ledstone
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+        >
+          Murdock
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+        >
+          Male
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+        >
+          Olofström
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeSmall"
+        >
+          SE
+        </td>
+        <td
+          aria-sort={null}
+          className="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight MuiTableCell-sizeSmall"
+        >
+          100
+        </td>
+      </tr>
+    </tbody>
+  </table>,
+  <div
+    className="makeStyles-seeMore-1"
+  >
+    <a
+      className="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorPrimary"
+      href="#"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+    >
+      see more scores
+    </a>
+  </div>,
+]
+`;
