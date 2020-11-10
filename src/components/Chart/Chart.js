@@ -16,7 +16,7 @@ export default function Chart({ chartData, chartDataType }) {
       <Title>Score statistics</Title>
       <ResponsiveContainer>
         <BarChart
-          data={chartData.filter((item) => item.score > 0)}
+          data={chartData}
           margin={{
             top: 16,
             right: 16,
