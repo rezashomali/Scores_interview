@@ -7,7 +7,8 @@
 3. Add Filter and sorting functionality
 4. Generate and calculate average score by country and gender
 5. Add selected average data in nav
-6. Add snapshot tests
+6. Add type checking with propTypes
+7. Add snapshot tests
 
 Hi there! Congratulations on making it to the next step!
 
